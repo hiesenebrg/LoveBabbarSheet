@@ -1,5 +1,7 @@
 import java.util.HashMap;
 
+// you can also do it by byh using two pointer one at begining and one at ending and move them accordinlg the condition 
+// of less than sum asd greater than sun as coding ninjas approach
 public class countPairwithGivenSum {
     public static int getPairsCount(int[] arr, int n, int k) {
         int sum = k;
