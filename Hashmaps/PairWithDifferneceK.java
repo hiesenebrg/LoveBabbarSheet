@@ -23,6 +23,8 @@ public class PairWithDifferneceK {
             if(map.containsKey(i-k) && !flag){
                 maxCount+=map.get(i-k);
         }
+        // now one thing to notice that I have first check the condition then putiing and updating map becuase if I hhave done firstly
+        // then I have to remove all the values of that i so to get rid of this I have did it from right hand instead of left hand
         if(map.containsKey(i)){
             map.put(i, map.get(i)+1);
         }else{
