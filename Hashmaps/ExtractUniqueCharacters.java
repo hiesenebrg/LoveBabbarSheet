@@ -4,16 +4,16 @@ import java.util.Set;
 
 public class ExtractUniqueCharacters {
     public static void extractuniquecharacters(String string) {
-        HashMap<Character , Integer> map = new HashMap<>();
+        HashMap<Character , Boolean> map = new HashMap<>();
+        String ans="";
         for (int i = 0; i < string.length(); i++) {
-            if(map.containsKey(string.charAt(i))){
-                map.put(string.charAt(i) , map.get(string.charAt(i))+1);
-            }else{
-                map.put(string.charAt(i) , 1);
+            if(!map.containsKey(string.charAt(i))){
+                map.put(string.charAt(i) ,true);
+                    ans+=string.charAt(i);
             }
         }
-        Set<Character> keys = map.keySet();
-        System.out.println(keys);
+        System.out.println(ans);
+        
        
            
             
