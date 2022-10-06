@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-import javax.xml.transform.Source;
+
 public class MinStepsToOne {
     public static int MinStepsToOne(int n) {
         if (n == 1) {
