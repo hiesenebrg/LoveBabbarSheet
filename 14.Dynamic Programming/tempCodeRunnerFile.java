@@ -1,2 +1,1 @@
-
-        int[] dp = new int[n+1];
+n
