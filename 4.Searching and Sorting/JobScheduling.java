@@ -5,6 +5,9 @@ class JobComparator implements Comparator<Job>
     {
         return a.finish < b.finish ? -1 : a.finish == b.finish ? 0 : 1;
     }
+    // pleae note that when a condition return -1 that means the value comparing first will be entered first
+    // for example here..if a.finish is less than b.finish then we will returning -1 tht means b.finish comes after the a.finish
+    // that means a.finish should be enter first in the array after that b.finish should be entered
 }
 
 class Job
