@@ -2,11 +2,12 @@
     "java.project.sourcePaths": [
         "Hashmaps",
         "9.BackTracking/Return",
+        "4.Searching and Sorting",
         "14.Dynamic Programming",
         "12.Graph",
         "11.Heap",
         "1.Array/Kadane's Algo",
         "1.Array",
-        "4.Searching and Sorting"
+        "8.Greedy"
     ]
 }
