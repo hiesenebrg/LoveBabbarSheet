@@ -1,36 +1,42 @@
 import java.util.Scanner;
 
 public class DmallestNumberwithgivennumber {
-    public static int[] samllestnumber(int s , int d) {
-        int [] ans = new int[d];
-        int i = ans.length-1;
-        int j = 0;
-        while(i<j){
-            if(s>9){
-                ans[i] = 9;
-                s-=9;
+    public static String samllestnumber(int s , int d) {
+        if(s<9){
+            return "-1";
+        }
+        String ans = "";
+    for (int i = d-1; i >=0; i++) {
+        if(s>9){
+            ans = '9' + ans;
+            s-=9;
+        }else{
+            if(i==0){
+                ans+=Integer.toString(s) + ans;
+            }else{
+                ans = Integer.toString(s-1)+ans;
                 i-=1;
-            }
-            else if(s<9){
-                if(j+1 ==i){
-                    ans[j] = s;
-                    return ans;
+                while(i>0){
+                    ans ='0'+ans;
+                    i-=1;
                 }
-                ans[j] =1;
-                s-=1;
-                j+=1;
+                ans = '1' + ans;
+                break;
             }
         }
-        return ans;
     }
+    return ans;
+    }
+        // int [] ans = new int[d];
+        
+        
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int s = sc.nextInt();
         int d = sc.nextInt();
-        int[] ans = samllestnumber(s,d);
-        for (int i = 0; i < ans.length; i++) {
-            System.out.println(ans[i]);
-        }
+        
+            System.out.print(samllestnumber(s,d));
+        
         // System.out.println();
     }
 }
