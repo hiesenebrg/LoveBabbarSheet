@@ -1,27 +1,13 @@
 import java.util.*;
 
 public class TransformtoSumTree {
-    public static BinaryTreeNode<Integer> transformtoSumTree(BinaryTreeNode<Integer> root) {
+    public static int transformtoSumTree(BinaryTreeNode<Integer> root) {
         if(root==null){
-            return null;
+            return 0;
         }
     int x = root.data;
-     BinaryTreeNode<Integer> left =  transformtoSumTree(root.left) ;
-     BinaryTreeNode<Integer> right =   transformtoSumTree(root.right);
-     if(left == null ){
-        root.data +=0;
-     }
-     else{
-        root.data = left.data;
-     }
-     if(right==null){
-        root.data +=0;
-     }else{
-        root.data+=right.data;
-     }
-     root.left = left;
-     root.right = right;
-     return root;
+     root.data =  transformtoSumTree(root.left) + transformtoSumTree(root.right);
+     return x + root.data;
     }
     public static void PrintTree(BinaryTreeNode<Integer> root) {  
         if(root==null){
@@ -82,6 +68,7 @@ public static BinaryTreeNode<Integer> takeinputLevelWise(){
 
     public static void main(String[] args) {
         BinaryTreeNode<Integer> root = takeinputLevelWise();
-            System.out.println(transformtoSumTree(root));
+        transformtoSumTree(root);
+        PrintTree(root);
     }
 }
