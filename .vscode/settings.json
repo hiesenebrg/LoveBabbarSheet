@@ -1,14 +1,15 @@
 {
-    "java.project.sourcePaths": [
-        "Hashmaps",
-        "9.BackTracking/Return",
-        "8.Greedy",
-        "4.Searching and Sorting",
-        "14.Dynamic Programming",
-        "12.Graph",
-        "11.Heap",
-        "1.Array/Kadane's Algo",
-        "1.Array",
-        "6.Binary Tree"
-    ]
+  "java.project.sourcePaths": [
+    "Hashmaps",
+    "9.BackTracking/Return",
+    "8.Greedy",
+    "6.Binary Tree",
+    "4.Searching and Sorting",
+    "14.Dynamic Programming",
+    "12.Graph",
+    "11.Heap",
+    "1.Array/Kadane's Algo",
+    "1.Array",
+    "Memoization"
+  ]
 }
