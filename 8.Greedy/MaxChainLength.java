@@ -1,5 +1,18 @@
 import java.util.*;
 
+
+class Pair
+{
+    int x;
+    int y;
+    
+    public Pair(int a, int b)
+    {
+        x = a;
+        y = b;
+    }
+}
+
 class JobComparator implements Comparator<Pair>{
     public int compare(Pair a, Pair b)
     {
