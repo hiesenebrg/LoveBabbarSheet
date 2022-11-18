@@ -26,7 +26,7 @@ public class BSTfromInOrderandPreOrder {
         int siInLeft = siIn;
         int eiInLeft = rootIndex - 1;
         int siInRight = rootIndex + 1;
-
+        int eiInRight = eiIn;
         int eiPreRight = eiPre;
 
         int leftSubTreeLength = eiInLeft - siInLeft + 1;

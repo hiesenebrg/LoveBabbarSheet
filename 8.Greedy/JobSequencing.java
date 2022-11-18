@@ -14,6 +14,8 @@ class Job{
     int id ;
     int deadline;
     int profit;
+    public int finish;
+    public int start;
     public Job (int id , int deadline , int profit){
             this.id = id;
             this.deadline = deadline;
