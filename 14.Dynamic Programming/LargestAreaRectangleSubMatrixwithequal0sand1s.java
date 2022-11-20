@@ -1,24 +1,23 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class LargestAreaRectangleSubMatrixwithequal0sand1s {
-      static boolean subArrWithSumZero(int arr[], int start, int end, int n)
-    {
+    static boolean subArrWithSumZero(int arr[], int start, int end, int n) {
         // to store cumulative sum
         int sum[] = new int[n];
- 
+
         // map to store the indexes of sum
-        HashMap<Integer, Integer> um
-            = new HashMap<Integer, Integer>();
- 
+        HashMap<Integer, Integer> um = new HashMap<Integer, Integer>();
+
         // build up the cumulative sum[] array
         sum[0] = arr[0];
         for (int i = 1; i < n; i++)
             sum[i] = sum[i - 1] + arr[i];
- 
+
         // to store the maximum length subarray
         // with sum equal to 0
         int maxLen = 0;
- 
+
         // traverse to the sum[] array
         for (int i = 0; i < n; i++) {
             // if true, then there is a subarray
@@ -30,12 +29,12 @@ public class LargestAreaRectangleSubMatrixwithequal0sand1s {
                 end = i;
                 maxLen = (i + 1);
             }
- 
+
             // else if true, then sum[i] has not
             // seen before in 'um'
             else if (um.get(sum[i]) == null)
                 um.put(sum[i], i);
- 
+
             // sum[i] has been seen before in the
             // unordered_map 'um'
             else {
@@ -49,55 +48,39 @@ public class LargestAreaRectangleSubMatrixwithequal0sand1s {
                 }
             }
         }
- 
+
         // if true, then there is no
         // subarray with sum equal to 0
         if (maxLen == 0)
             return false;
- 
+
         // else return true
         return true;
     }
 
-
-    static void maxAreaRectWithSumZero(int mat[][], int row, int col)
-    {
-        // to store intermediate values
+    public static ArrayList<ArrayList<Integer>> sumZeroMatrix(int[][] a) {
+        int row = a.length;
+        int col = a[0].length;
         int temp[] = new int[row];
         int startRow = 0, endRow = 0;
- 
-        // to store the final outputs
+
         int finalLeft = -1, finalRight = -1, finalTop = -1,
-            finalBottom = -1;
+                finalBottom = -1;
         int maxArea = 0;
- 
+
         // Set the left column
         for (int left = 0; left < col; left++) {
-            // Set the right column for the left column
-            // set by outer loop
+
             for (int right = left; right < col; right++) {
-                // Calculate sum between current left
-                // and right for every row 'i'
-                // consider value '1' as '1' and
-                // value '0' as '-1'
+
                 for (int i = 0; i < row; i++)
-                    temp[i]
-                        += (mat[i][right] != 0) ? 1 : -1;
- 
-                // Find largest subarray with 0 sum in
-                // temp[]. The subArrWithSumZero() function
-                // also sets values of finalTop,
-                // finalBottom, finalLeft and finalRight if
-                // there exists a subarray with sum 0 in
-                // temp
+                    temp[i] += a[i][right];
+
                 if (subArrWithSumZero(temp, startRow,
-                                      endRow, row)) {
+                        endRow, row)) {
                     int area = (right - left + 1)
-                               * (endRow - startRow + 1);
- 
-                    // Compare current 'area' with previous
-                    // area and accordingly update final
-                    // values
+                            * (endRow - startRow + 1);
+
                     if (maxArea < area) {
                         finalTop = startRow;
                         finalBottom = endRow;
@@ -108,36 +91,24 @@ public class LargestAreaRectangleSubMatrixwithequal0sand1s {
                 }
             }
         }
- 
-        // if true then there is no rectangular submatrix
-        // with equal number of 1's and 0's
-        if (maxArea == 0)
-            System.out.print(
-                "No such rectangular submatrix exists:");
- 
-        // displaying the top left and bottom right
-        // boundaries with the area of the rectangular
-        // submatrix
-        else {
-            System.out.println("(Top, Left): "
-                               + "(" + finalTop + ", "
-                               + finalLeft + ")");
- 
-            System.out.println("(Bottom, Right): "
-                               + "(" + finalBottom + ", "
-                               + finalRight + ")");
- 
-            System.out.println("Area: " + maxArea
-                               + " sq.units");
+
+        ArrayList<Integer> small_ans = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+        for (int i = finalTop; i < finalBottom; i++) {
+            for (int j = finalLeft; i < finalRight; i++) {
+                small_ans.add(a[i][j]);
+            }
+            ans.add(small_ans);
         }
+        return ans;
     }
-    public static void main(String[] args)
-    {
+
+    public static void main(String[] args) {
         int mat[][] = { { 0, 0, 1, 1 },
-                        { 0, 1, 1, 0 },
-                        { 1, 1, 1, 0 },
-                        { 1, 0, 0, 1 } };
+                { 0, 1, 1, 0 },
+                { 1, 1, 1, 0 },
+                { 1, 0, 0, 1 } };
         int row = 4, col = 4;
-        maxAreaRectWithSumZero(mat, row, col);
+        sumZeroMatrix(mat, row, col);
     }
 }
