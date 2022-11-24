@@ -4,7 +4,7 @@ public class ReplaceEveryELementwithSuccessor {
             return root = new Node();
         if (data < root.data) {
             succ = root.data;
-            insert(root.left, data, succ);
+            root.left = insert(root.left, data, succ);
         } else if (data > root.data) {
             root.right = insert(root.right, data, succ);
         }
