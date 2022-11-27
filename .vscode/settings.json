@@ -1,5 +1,6 @@
 {
   "java.project.sourcePaths": [
+    "Memoization",
     "Hashmaps",
     "9.BackTracking/Return",
     "8.Greedy",
@@ -10,6 +11,6 @@
     "11.Heap",
     "1.Array/Kadane's Algo",
     "1.Array",
-    "Memoization"
+    "7.Binary Search Tree"
   ]
 }

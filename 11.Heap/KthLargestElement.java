@@ -1,25 +1,24 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class KthLargestElement {
-    public static ArrayList<Integer> kthlargest(ArrayList<Integer> arr , int k) {
+    public static int kthlargest(ArrayList<Integer> arr , int k) {
         ArrayList<Integer> ans = new ArrayList<>();
         PriorityQueue<Integer> pq = new PriorityQueue<>();
         for (int i = 0; i < k; i++) {
             pq.add(arr.get(i));
         }
         for (int i = k; i < arr.size(); i++) {
-            int min = pq.peek();
-            if(min<arr.get(i)){
+            int max = pq.peek();
+            if(max<arr.get(i)){
                 pq.poll();
                 pq.add(arr.get(i));
             }
         }
-        for (int i = 0; i < k; i++) {
-            ans.add(pq.poll());
-        }
-        return ans;
+        
+        return pq.poll();
     }
     public static void main(String[] args) {
         ArrayList<Integer> input = new ArrayList<>();
