@@ -4,6 +4,7 @@
     "Hashmaps",
     "9.BackTracking/Return",
     "8.Greedy",
+    "7.Binary Search Tree",
     "6.Binary Tree",
     "4.Searching and Sorting",
     "14.Dynamic Programming",
@@ -11,6 +12,6 @@
     "11.Heap",
     "1.Array/Kadane's Algo",
     "1.Array",
-    "7.Binary Search Tree"
+    "10.Stacks&Queues"
   ]
 }
