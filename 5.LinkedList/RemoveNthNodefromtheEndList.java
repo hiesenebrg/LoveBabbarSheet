@@ -1,15 +1,20 @@
 public class RemoveNthNodefromtheEndList {
-    public static ListNode removenthnodefromend(String[] args) {
+    int getNthFromLast(Node head, int n)
+    {
+        Node curr =head;
+    while(n!=1){
+        curr = curr.next;
+        if(curr==null) return -1;
         
-    
-    ListNode fast = head, slow = head;
-        for (int i = 0; i < n; i++) fast = fast.next;
-        if (fast == null) return head.next;
-        while (fast.next != null) {
-            fast = fast.next;
-            slow = slow.next;
-        }
-        slow.next = slow.next.next;
-        return head;
-}
+        n-=1;
+    }
+    if(curr==null) return -1;
+    Node currr = head;
+    while(curr.next!=null){
+        currr = currr.next;
+        curr = curr.next;
+        
+    }
+    return currr.data;
+    }
 }
