@@ -22,7 +22,7 @@ public class LRUcache {
         LRUCache(int cap)
         {
               this.capacity = cap;
-            map = new HashMap<>();
+            map = new HashMap<> ();
             head = new Node(0, 0);
             tail = new Node(0, 0);
             head.next = tail;
