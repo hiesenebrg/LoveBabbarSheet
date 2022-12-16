@@ -6,6 +6,7 @@
     "8.Greedy",
     "7.Binary Search Tree",
     "6.Binary Tree",
+    "5.LinkedList",
     "4.Searching and Sorting",
     "14.Dynamic Programming",
     "12.Graph",
@@ -13,6 +14,6 @@
     "10.Stacks&Queues",
     "1.Array/Kadane's Algo",
     "1.Array",
-    "5.LinkedList"
+    "3.String"
   ]
 }
