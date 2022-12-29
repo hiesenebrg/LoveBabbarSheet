@@ -3,7 +3,7 @@ public class FlattenBSTintoList {
 
     // Function to perform
     // in-order traversal
-    static void Inorder(node curr) {
+    static void Inorder(Node curr) {
         // Base case
         if (curr == null)
             return;
@@ -17,7 +17,7 @@ public class FlattenBSTintoList {
     // Function to flatten binary
     // tree using level order
     // traversal
-    static node flatten(node parent) {
+    static node flatten(Node parent) {
         // Dummy node
         node dummy = new node(-1);
 
