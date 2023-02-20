@@ -57,7 +57,7 @@ public class MidPointinStack {
 			}
 			else {
 				data = head.data;
-				head = head.prev;
+				head = head.prev; 
 				head.next = null;
 				if (size % 2 == 0) {
 					mid = mid.prev;

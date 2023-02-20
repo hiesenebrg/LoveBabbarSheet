@@ -14,7 +14,7 @@ public class TopView {
         if(root==null){
             return ;
         }
-        Pair<BinaryTreeNode<Integer>, Integer> pair = new Pair(root, 0);
+        Pair<BinaryTreeNode<Integer>, Integer> pair = new Pair(root,  0);
         pendingNodess.add(pair);
         while(!pendingNodess.isEmpty()){
             BinaryTreeNode<Integer> first = pendingNodess.peek().a;
@@ -32,11 +32,12 @@ public class TopView {
 
         }
         // this is how to iterate on the Hashmap
-       Iterator iter = hm.entrySet().iterator();
-       while(iter.hasNext()){
-        Map.Entry mapElement = (Map.Entry)iter.next();
-        System.out.println(mapElement.getValue() + " ");
-       }
+    //    Iterator iter = hm.entrySet().iterator();
+    //    while(iter.hasNext()){
+    //     Map.Entry mapElement = (Map.Entry)iter.next();
+    //     System.out.println(mapElement.getValue() + " ");
+    //    }
+    hm.forEach((k,v) -> System.out.println(v+ " "));
     }
     public static void PrintTree(BinaryTreeNode<Integer> root) {  
             if(root==null){

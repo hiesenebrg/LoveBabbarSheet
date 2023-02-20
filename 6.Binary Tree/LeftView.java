@@ -8,26 +8,39 @@ import javax.print.attribute.standard.QueuedJobCount;
 public class LeftView {
 
 
-    public static ArrayList<Integer> leftview(BinaryTreeNode<Integer> root){
-        ArrayList<Integer> ans = new ArrayList<>();
-        Queue<BinaryTreeNode<Integer>> pendingNodess = new LinkedList<>();
-        pendingNodess.add(root);
-        while(!pendingNodess.isEmpty())
-        {
-            int len  = pendingNodess.size();
-             ans.add(pendingNodess.peek().data);
-             while(len!=0){
-                BinaryTreeNode<Integer> first  = pendingNodess.poll();
-                if(first.left!=null){
-                    pendingNodess.add(first.left);
-                }
-                if(first.right!=null){
-                    pendingNodess.add(first.right);
-                }
-                len-=1;
-             }
+    public static void leftview(BinaryTreeNode<Integer> root , ArrayList<Integer> ans){
+        if(root.left==null && root.right==null){
+            ans.add(root.data);
+            return;
         }
-        return ans;
+        // here please note that for a node which has no left node then its right node act as a left node so we have
+        // to add it to our answer too so please do not get confuse
+        // focus on if and else if that only one recursion is only call each time not the both
+        if(root.left!=null){
+            ans.add(root.data);
+            leftview(root.left, ans);
+        }else if(root.right!=null){
+                ans.add(root.data);
+                leftview(root.right, ans);
+        }
+        // Queue<BinaryTreeNode<Integer>> pendingNodess = new LinkedList<>();
+        // pendingNodess.add(root);
+        // while(!pendingNodess.isEmpty())
+        // {
+        //     int len  = pendingNodess.size();
+        //      ans.add(pendingNodess.peek().data);
+        //      while(len!=0){
+        //         BinaryTreeNode<Integer> first  = pendingNodess.poll();
+        //         if(first.left!=null){
+        //             pendingNodess.add(first.left);
+        //         }
+        //         if(first.right!=null){
+        //             pendingNodess.add(first.right);
+        //         }
+        //         len-=1;
+        //      }
+        // }
+        // return ans;
     }
     public static void PrintTree(BinaryTreeNode<Integer> root) {  
             if(root==null){
@@ -87,8 +100,10 @@ public class LeftView {
     }
 
     public static void main(String[] args) {
+        ArrayList<Integer> ans = new ArrayList<>();
         BinaryTreeNode<Integer> root = takeinputLevelWise();
-        System.out.println(leftview(root));
+         leftview(root , ans);
+        System.out.println(ans);
         // PrintTree(root);
 
     }

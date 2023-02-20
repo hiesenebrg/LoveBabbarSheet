@@ -1,6 +1,7 @@
 public class SumofLongestBloodLine {
     public  int[]  solve(Node root){
         if(root==null){
+            // {hieght , sum}
             int [] temp  = {0,0};
             return temp;
         }

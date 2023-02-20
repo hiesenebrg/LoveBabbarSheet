@@ -9,7 +9,7 @@ public class TheCeleberityProblem {
             int a = stack.pop();
             int b = stack.pop();
             if(M[b][a]!=0){
-                // if b knows b then b is not a celebrity
+                // if b knows a then b is not a celebrity
                 stack.push(a);
             }else{
                 stack.push(b);
