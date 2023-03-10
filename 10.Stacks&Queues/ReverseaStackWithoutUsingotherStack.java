@@ -3,9 +3,9 @@ import java.util.Stack;
 public class ReverseaStackWithoutUsingotherStack {
     static void insert_at_bottom(char x)
     {
- 
+  st.push(x)
         if (st.isEmpty())
-            st.push(x);
+           ;
  
         else {
  
