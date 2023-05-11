@@ -1,6 +1,6 @@
 import java.util.*;
 
-
+// same as activity selection problem
 class Pair
 {
     int x;
